@@ -8,6 +8,7 @@ using DentalApi.Services.Interfaces;
 using DentalApi.Services.Implementations;
 using DentalApi.Repositories.Interfaces;
 using DentalApi.Repositories.Implementations;
+using DentalApi.Extensions; 
 using DentalApi.Mappings;
 using DotNetEnv;
 
@@ -71,12 +72,7 @@ builder.Services.AddAuthentication(options =>
 
 builder.Services.AddAuthorization();
 
-builder.Services.AddScoped<IUserRepository, UserRepository>();
-builder.Services.AddScoped<IPatientRepository, PatientRepository>();
-builder.Services.AddScoped<IAppointmentRepository, AppointmentRepository>();
-builder.Services.AddScoped<IProcedureRepository, ProcedureRepository>();
-builder.Services.AddScoped<IFinancialRepository, FinancialRepository>();
-builder.Services.AddScoped<IToothSurfaceRepository, ToothSurfaceRepository>();
+builder.Services.AddRepositories();
 
 builder.Services.AddScoped<IAuthService, AuthService>();
 builder.Services.AddScoped<IPatientService, PatientService>();
