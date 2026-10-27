@@ -1,156 +1,136 @@
-🦷 SistemaOdontologicoApi
+# SistemaOdontologicoApi
 
-API REST para gestão de clínicas odontológicas, desenvolvida com ASP.NET Core 9. Permite gerenciar pacientes, agendamentos, prontuário odontológico (odontograma) e controle financeiro, com autenticação segura via JWT.
+REST API for dental clinic management, developed with C# and ASP.NET Core 9.
 
-Este projeto foi desenvolvido para demonstrar conhecimento em arquitetura de API REST, modelagem de banco de dados, autenticação e boas práticas de desenvolvimento back-end.
+The application provides features for managing patients, appointments, dental records, and financial operations. It uses PostgreSQL for data persistence and JWT-based authentication to protect API endpoints.
 
+This project was developed as part of my back-end development portfolio, focusing on REST API design, layered architecture, database integration, and software engineering best practices.
 
-🚀 Tecnologias
+## Technologies
 
+- **C#**
+- **ASP.NET Core 9**
+- **Entity Framework Core**
+- **PostgreSQL**
+- **JWT Authentication**
+- **AutoMapper**
+- **Repository Pattern**
+- **Dependency Injection**
 
-ASP.NET Core 9
-Entity Framework Core
-PostgreSQL
-JWT Authentication
-Repository Pattern
-Dependency Injection
-AutoMapper
+## Features
 
+### Patient Management
+- Patient registration and management
+- Patient history
 
+### Appointment Management
+- Appointment scheduling
+- Appointment status management
 
-🏗️ Arquitetura
+### Dental Records
+- Dental chart (odontogram)
+- Treatment records by tooth
 
-O projeto segue uma arquitetura em camadas, separando responsabilidades:
+### Financial Management
+- Treatment cost tracking
+- Payment management
 
+### Authentication and Authorization
+- JWT-based authentication
+- Protected API endpoints
+- Access control based on implemented authorization rules
+
+## Architecture
+
+The project follows a layered architecture to separate responsibilities and improve maintainability.
+
+```text
 SistemaOdontologicoApi/
-├── Controllers/     # Endpoints da API
-├── Services/        # Regras de negócio
-├── Repositories/     # Acesso a dados (EF Core)
-├── DTOs/             # Objetos de transferência de dados
-├── Models/           # Entidades do banco de dados
-└── Mappings/          # Perfis do AutoMapper
+├── Controllers/
+├── Services/
+├── Repositories/
+├── DTOs/
+├── Models/
+└── Mappings/
+```
 
+### Layer Responsibilities
 
-Controllers recebem as requisições e delegam a lógica para os Services
-Services contêm as regras de negócio e chamam os Repositories
-Repositories são responsáveis pelo acesso ao banco de dados via Entity Framework Core
-DTOs e AutoMapper evitam expor as entidades do banco diretamente na API
+- **Controllers:** Handle HTTP requests and responses.
+- **Services:** Implement business logic.
+- **Repositories:** Abstract data access operations.
+- **DTOs:** Define data structures for communication between clients and the API.
+- **Models:** Represent application entities and data models.
+- **Mappings:** Configure object mappings using AutoMapper.
 
+## Getting Started
 
+### Prerequisites
 
-📌 Funcionalidades
+- [.NET 9 SDK](https://dotnet.microsoft.com/download/dotnet/9.0)
+- [PostgreSQL](https://www.postgresql.org/download/)
+- [Git](https://git-scm.com/)
 
-👤 Pacientes
+### 1. Clone the Repository
 
-
-Cadastro e gerenciamento de pacientes
-Histórico do paciente
-
-
-📅 Agendamentos
-
-
-Marcação de consultas
-Gerenciamento de status do agendamento
-
-
-🦷 Prontuário Odontológico
-
-
-Odontograma interativo
-Registro de tratamentos por dente
-
-
-💰 Financeiro
-
-
-Controle de custos de tratamentos
-Organização de pagamentos
-
-
-🔐 Autenticação e Segurança
-
-
-Autenticação via JWT
-Rotas protegidas
-Controle de acesso por usuário
-
-
-
-
-⚙️ Como Rodar o Projeto
-
-Requisitos
-
-
-.NET 9 SDK
-PostgreSQL
-
-
-Passo a passo
-
-
-Clone o repositório:
-
-
-bashgit clone https://github.com/erickthmdev/SistemaOdontologicoApi.git
+```bash
+git clone https://github.com/erickthmdev/SistemaOdontologicoApi.git
 cd SistemaOdontologicoApi
+```
 
+### 2. Configure the Database
 
-Configure a connection string:
+Create a PostgreSQL database and configure the connection string required by the application.
 
-Copie appsettings.example.json para appsettings.json
-Edite os dados de conexão com o seu banco PostgreSQL
+If the repository includes an `appsettings.example.json` file, copy it to `appsettings.json` and update the database credentials.
 
+Do not commit passwords, JWT signing keys, or other sensitive configuration values to version control.
 
+### 3. Restore Dependencies
 
-Restaure as dependências:
+```bash
+dotnet restore
+```
 
+### 4. Apply Database Migrations
 
-bashdotnet restore
+If Entity Framework Core migrations are configured, run:
 
+```bash
+dotnet ef database update
+```
 
-Aplique as migrations do banco de dados:
+Make sure the Entity Framework Core CLI is installed and compatible with the project's package versions.
 
+### 5. Run the Application
 
-bashdotnet ef database update
+```bash
+dotnet run
+```
 
+The API will start at the address displayed in the terminal.
 
-Rode a API:
+If Swagger is enabled in the current environment, access `/swagger` on the application's base URL to explore and test the available endpoints.
 
+## Engineering Practices
 
-bashdotnet run
+The project applies the following development concepts:
 
-A API estará disponível em https://localhost:{porta} — se o Swagger estiver configurado, acesse /swagger para testar os endpoints.
+- RESTful API design
+- Separation of concerns
+- Layered architecture
+- Object-relational mapping with Entity Framework Core
+- Dependency injection
+- Repository Pattern
+- DTO-based data transfer
+- JWT authentication and authorization
 
+## Author
 
-👨‍💻 Desenvolvimento
+**Erick** — Back-end Developer
 
-Toda a API foi projetada e desenvolvida por mim, incluindo:
+- GitHub: [@erickthmdev](https://github.com/erickthmdev)
 
+## License
 
-Arquitetura REST
-Regras de negócio
-Modelagem do banco de dados
-Integração com PostgreSQL
-Sistema de autenticação JWT
-Estrutura geral da aplicação
-
-
-
-🎯 Objetivo do Projeto
-
-Este projeto foi criado para aprimorar e demonstrar habilidades em:
-
-
-Desenvolvimento back-end com ASP.NET Core
-Design de API REST
-Integração com banco de dados PostgreSQL
-Autenticação e autorização
-Boas práticas de arquitetura de software
-
-
-
-📄 Licença
-
-Este projeto está sob a licença MIT.
+This project is licensed under the MIT License. See the `LICENSE` file for details.
