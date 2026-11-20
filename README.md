@@ -1,4 +1,4 @@
-# SistemaOdontologicoApi
+# DentalApi
 
 REST API for dental clinic management, developed with C# and ASP.NET Core 9.
 
