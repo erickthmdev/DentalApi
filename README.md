@@ -45,7 +45,7 @@ This project was developed as part of my back-end development portfolio, focusin
 The project follows a layered architecture to separate responsibilities and improve maintainability.
 
 ```text
-SistemaOdontologicoApi/
+DentalApi/
 ├── Controllers/
 ├── Services/
 ├── Repositories/
@@ -74,8 +74,8 @@ SistemaOdontologicoApi/
 ### 1. Clone the Repository
 
 ```bash
-git clone https://github.com/erickthmdev/SistemaOdontologicoApi.git
-cd SistemaOdontologicoApi
+git clone https://github.com/erickthmdev/DentalApi.git
+cd DentalApi
 ```
 
 ### 2. Configure the Database
